@@ -18,7 +18,8 @@ const aboutRoute = require('./routes/about.route');
 const contactRoute = require('./routes/contact.route');
 const jobsRoute = require('./routes/jobs.route');
 const LoginRoute = require('./routes/login.route');
-const RegisterRoute = require('./routes/register.route')
+const RegisterRoute = require('./routes/register.route');
+const userRoute = require('./routes/users');
 
 
 
@@ -47,6 +48,7 @@ app.use('/contact', contactRoute);
 app.use('/jobs', indexRoute);
 app.use('/new_jobs', jobsRoute);
 app.use('/login', LoginRoute);
-app.use('/register', RegisterRoute)
+app.use('/register', RegisterRoute);
+
 
 app.listen(process.env.PORT || 3000)
