@@ -19,8 +19,6 @@ const contactRoute = require('./routes/contact.route');
 const jobsRoute = require('./routes/jobs.route');
 const LoginRoute = require('./routes/login.route');
 const RegisterRoute = require('./routes/register.route');
-const userRoute = require('./routes/users');
-
 
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true})
