@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/', async (req, res, next) =>{
-    res.render('jobs/newjob')
+    res.render('jobs/create')
 });
 
 router.post('/', async (req, res, next) => {

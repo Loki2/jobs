@@ -7,8 +7,18 @@ const app = express();
 const expressLayout = require('express-ejs-layouts')
 const mongoose = require('mongoose');
 
-
+/*
+****IMPORT ALL ROUTES COMPONENT
+*/
 const indexRoute = require('./routes/index');
+const blogRoute = require('./routes/blog.route');
+const productRoute = require('./routes/product.route');
+const serviceRoute = require('./routes/service.route');
+const aboutRoute = require('./routes/about.route');
+const contactRoute = require('./routes/contact.route');
+const jobsRoute = require('./routes/jobs.route');
+const LoginRoute = require('./routes/login.route');
+const RegisterRoute = require('./routes/register.route')
 
 
 
@@ -25,7 +35,18 @@ app.use(express.static('public'));
 
 
 
+/*
+****USE ALL ROUTES THEN EXPORTS
+*/
 app.use('/', indexRoute);
-
+app.use('/blogs', blogRoute);
+app.use('/products', productRoute);
+app.use('/services', serviceRoute);
+app.use('/about', aboutRoute);
+app.use('/contact', contactRoute);
+app.use('/jobs', indexRoute);
+app.use('/new_jobs', jobsRoute);
+app.use('/login', LoginRoute);
+app.use('/register', RegisterRoute)
 
 app.listen(process.env.PORT || 3000)
