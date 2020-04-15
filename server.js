@@ -1,6 +1,6 @@
-if(process.env.NODE_ENV !== 'production'){
-    require('dotenv').config()
-}
+// if(process.env.NODE_ENV !== 'production'){
+//     require('dotenv').config()
+// }
 
 const express = require('express');
 const app = express();
@@ -22,7 +22,7 @@ const jobsRoute = require('./routes/jobs.route');
 const userRoute = require('./routes/users');
 
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('DATABASE_URL=mongodb://localhost/jobportal', { useNewUrlParser: true, useUnifiedTopology: true})
 const db = mongoose.connection;
 db.on('error', error => console.error(error));
 db.once('open', () => console.log('Connected to mongoose'))
