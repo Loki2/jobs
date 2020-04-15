@@ -4,8 +4,13 @@ const router = express.Router();
 
 
 router.get('/', async (req, res, next) =>{
-    res.render('jobs/create')
+    res.render('jobs/index')
 });
+
+router.get('/new', async (req, res, next) =>{
+    res.render('jobs/new_job')
+});
+
 
 router.post('/', async (req, res, next) => {
     console.log(req.body.jobtitle);
