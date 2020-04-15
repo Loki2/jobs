@@ -1,12 +1,12 @@
-// if(process.env.NODE_ENV !== 'production'){
-//     require('dotenv').config()
-// }
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config()
+}
 
 const express = require('express');
 const app = express();
 const expressLayout = require('express-ejs-layouts')
 const mongoose = require('mongoose');
-//const PORT = process.env.PORT || 4000; 
+// const PORT = process.env.PORT || 8080; 
 /*
 ****IMPORT ALL ROUTES COMPONENT
 */
@@ -22,7 +22,7 @@ const jobsRoute = require('./routes/jobs.route');
 const userRoute = require('./routes/users');
 
 
-mongoose.connect('DATABASE_URL=mongodb://localhost/jobportal', { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/jobportal', { useNewUrlParser: true, useUnifiedTopology: true})
 const db = mongoose.connection;
 db.on('error', error => console.error(error));
 db.once('open', () => console.log('Connected to mongoose'))
