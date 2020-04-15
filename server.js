@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 const expressLayout = require('express-ejs-layouts')
 const mongoose = require('mongoose');
-const PORT = process.env.APP_PORT; 
+//const PORT = process.env.PORT || 4000; 
 /*
 ****IMPORT ALL ROUTES COMPONENT
 */
@@ -55,6 +55,4 @@ app.use('/users', userRoute);
 app.use('/users', userRoute);
 
 
-app.listen(PORT, () => {
-    console.log(`Server is starting at Port: ` + PORT)
-})
+app.listen( process.env.PORT || 4000)
